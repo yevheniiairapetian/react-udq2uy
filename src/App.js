@@ -10,17 +10,17 @@ text-align:center;
 `;
 
 const Btn = style.button`
-color:black;
+color:grey;
 padding:10px 20px;
 margin-top:20px;
 font-size:18px;
-background-color:white;
+background-color:darkslategrey;
 font-family:'Comic-Sans';
 &:hover {
   cursor: pointer;
   border: 1px solid white;
   font-weight:bold;
-  color:darkgrey;
+  color:whitesmoke;
 }
 
 
@@ -33,15 +33,24 @@ display:flex;
 
 const P = style.p`
   display:block;
-  color:whitesmoke;
+  opacity:0.7;
+  color:lightgreen;
   margin-top:70px;
   padding:10px;
+  &:hover {
+    opacity:1;
+  }
 `;
 
 const Title = style.h1`
   padding-top:30px;
   text - align: center;
   color: grey;
+  background: darkslategrey;
+  padding-bottom:30px;
+  &:hover {
+    color:white;
+  }
 `;
 
 const Img = style.img`
@@ -49,10 +58,36 @@ display:block;
 width:40%;
 height: auto;
 padding:20px;
+&:hover {
+  cursor: pointer;
+  border: 1px solid white;
+}
 `;
+
+const List = style.ul`
+  display:block;
+  opacity:0.7;
+  color:lightgreen;
+  margin-top:70px;
+  padding:10px;
+  &:hover {
+    opacity:1;
+  }
+`;
+
 // create the styled component Ul of a ul and apply these rules:  display: flex; list-style-type: none;
 // create the styled component Title of an h1 and apply these rules:  text - align: center; color: #d41f1f;
-
+function btn() {
+  return (
+    <div>
+      <List>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </List>
+    </div>
+  );
+}
 function App() {
   return (
     // replace the html tags below where necessary with the created styled components
@@ -66,7 +101,12 @@ function App() {
             years. Browse the tracks in this album!
           </P>
         </Cont>
-        <Btn type="button">Browse Tracks!</Btn>
+        <Btn
+          type="button"
+          // onClick="btn()"
+        >
+          Browse Tracks!
+        </Btn>
       </Test>
     </div>
   );
